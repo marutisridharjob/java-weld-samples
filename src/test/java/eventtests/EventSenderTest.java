@@ -36,18 +36,19 @@ class EventSenderTest {
 
 		assertTrue(pl.getResponseValues().iterator().hasNext());
 		assertTrue(pl.isIntercepted());
+		assertTrue(pl.getResponseValues().count() == 2);
 
 		pl.getResponseValues().forEach(val -> System.out.println(val));
-		
+
 		EventPayload pl2 = new EventPayload("CDITest Goodbye");
 		sender.doSayHello(pl2);
 
 		assertTrue(pl2.getResponseValues().iterator().hasNext());
 		assertTrue(pl2.isIntercepted());
+		assertTrue(pl.getResponseValues().count() == 2);
 
 		pl2.getResponseValues().forEach(val -> System.out.println(val));
 
-		
 	}
 
 }
