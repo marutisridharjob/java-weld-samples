@@ -2,8 +2,6 @@ package eventtests;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import java.util.Iterator;
-
 import javax.inject.Inject;
 
 import org.jboss.weld.junit5.WeldInitiator;
@@ -12,12 +10,12 @@ import org.jboss.weld.junit5.WeldSetup;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
-import interceptors.EventTypeLoggingInterceptor;
-import payload.EventPayload;
-import payload.observer.EventObserver;
-import payload.observer.GoodbyeObserver;
-import payload.observer.HelloObserver;
-import payload.sender.EventSender;
+import weldSe.EventPayload;
+import weldSe.interceptors.EventTypeLoggingInterceptor;
+import weldSe.observer.EventObserver;
+import weldSe.observer.GoodbyeObserver;
+import weldSe.observer.HelloObserver;
+import weldSe.sender.EventSender;
 
 @ExtendWith(WeldJunit5Extension.class)
 class EventSenderTest {

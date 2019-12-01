@@ -1,4 +1,4 @@
-package interceptors;
+package weldSe.interceptors;
 
 import java.lang.annotation.Annotation;
 
@@ -8,8 +8,8 @@ import javax.interceptor.InvocationContext;
 
 import org.apache.log4j.Logger;
 
-import event.EventType;
-import payload.EventPayload;
+import weldSe.EventPayload;
+import weldSe.event.EventType;
 
 @Loggable
 @Interceptor

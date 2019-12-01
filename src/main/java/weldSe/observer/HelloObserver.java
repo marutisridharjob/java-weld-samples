@@ -1,4 +1,4 @@
-package payload.observer;
+package weldSe.observer;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.event.Observes;
@@ -6,10 +6,10 @@ import javax.inject.Named;
 
 import org.apache.log4j.Logger;
 
-import event.EventType;
-import event.EventValue;
-import interceptors.Loggable;
-import payload.EventPayload;
+import weldSe.EventPayload;
+import weldSe.event.EventType;
+import weldSe.event.EventValue;
+import weldSe.interceptors.Loggable;
 
 @Named
 @ApplicationScoped
