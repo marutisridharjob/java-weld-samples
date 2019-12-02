@@ -1,4 +1,4 @@
-package weldSe.interceptors;
+package weldSe.eventsExample.interceptors;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

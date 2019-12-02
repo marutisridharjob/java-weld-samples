@@ -1,13 +1,13 @@
-package weldSe.sender;
+package weldSe.eventsExample.sender;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.event.Event;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import weldSe.EventPayload;
-import weldSe.event.EventType;
-import weldSe.event.EventValue;
+import weldSe.eventsExample.EventPayload;
+import weldSe.eventsExample.event.EventType;
+import weldSe.eventsExample.event.EventValue;
 
 
 @Named

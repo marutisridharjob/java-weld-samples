@@ -1,4 +1,4 @@
-package weldSe;
+package weldSe.eventsExample;
 
 import java.util.ArrayList;
 import java.util.stream.Stream;
