@@ -1,10 +1,16 @@
 package weldSe.eventsExample;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.stream.Stream;
 
-public class EventPayload {
+public class EventPayload implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 601499924737711109L;
+
 	private boolean intercepted;
 	
 	private String msg;
