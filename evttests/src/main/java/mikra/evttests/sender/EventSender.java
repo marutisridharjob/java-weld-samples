@@ -1,13 +1,13 @@
-package weldSe.eventsExample.sender;
+package mikra.evttests.sender;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.event.Event;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import weldSe.eventsExample.EventPayload;
-import weldSe.eventsExample.event.EventType;
-import weldSe.eventsExample.event.EventValue;
+import mikra.evttests.EventPayload;
+import mikra.evttests.event.EventType;
+import mikra.evttests.event.EventValue;
 
 
 @Named

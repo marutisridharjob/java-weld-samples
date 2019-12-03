@@ -1,4 +1,4 @@
-package weldSe.eventsExample.interceptors;
+package mikra.evttests.interceptors;
 
 import java.lang.annotation.Annotation;
 
@@ -8,8 +8,8 @@ import javax.interceptor.InvocationContext;
 
 import org.apache.log4j.Logger;
 
-import weldSe.eventsExample.EventPayload;
-import weldSe.eventsExample.event.EventType;
+import mikra.evttests.EventPayload;
+import mikra.evttests.event.EventType;
 
 @Loggable
 @Interceptor

@@ -1,4 +1,4 @@
-package weldSe.eventsExample.observer;
+package mikra.evttests.observer;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.event.Observes;
@@ -6,8 +6,8 @@ import javax.inject.Named;
 
 import org.apache.log4j.Logger;
 
-import weldSe.eventsExample.EventPayload;
-import weldSe.eventsExample.interceptors.Loggable;
+import mikra.evttests.EventPayload;
+import mikra.evttests.interceptors.Loggable;
 
 @Named
 @ApplicationScoped

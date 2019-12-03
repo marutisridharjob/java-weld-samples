@@ -1,4 +1,4 @@
-package weldSe.eventsExample;
+package mikra.evttests;
 
 import java.io.Serializable;
 import java.util.ArrayList;
