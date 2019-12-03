@@ -1,4 +1,4 @@
-package mikra.evttests.observer;
+package mikra.eventsample.observer;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.event.Observes;
@@ -6,8 +6,8 @@ import javax.inject.Named;
 
 import org.apache.log4j.Logger;
 
-import mikra.evttests.EventPayload;
-import mikra.evttests.interceptors.Loggable;
+import mikra.eventsample.EventPayload;
+import mikra.eventsample.interceptors.Loggable;
 
 @Named
 @ApplicationScoped

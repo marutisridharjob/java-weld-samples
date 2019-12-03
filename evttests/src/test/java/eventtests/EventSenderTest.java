@@ -10,12 +10,12 @@ import org.jboss.weld.junit5.WeldSetup;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
-import mikra.evttests.EventPayload;
-import mikra.evttests.interceptors.EventTypeLoggingInterceptor;
-import mikra.evttests.observer.EventObserver;
-import mikra.evttests.observer.GoodbyeObserver;
-import mikra.evttests.observer.HelloObserver;
-import mikra.evttests.sender.EventSender;
+import mikra.eventsample.EventPayload;
+import mikra.eventsample.interceptors.EventTypeLoggingInterceptor;
+import mikra.eventsample.observer.EventObserver;
+import mikra.eventsample.observer.GoodbyeObserver;
+import mikra.eventsample.observer.HelloObserver;
+import mikra.eventsample.sender.EventSender;
 
 @ExtendWith(WeldJunit5Extension.class)
 class EventSenderTest {

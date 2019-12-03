@@ -1,13 +1,13 @@
-package mikra.evttests.sender;
+package mikra.eventsample.sender;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.event.Event;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import mikra.evttests.EventPayload;
-import mikra.evttests.event.EventType;
-import mikra.evttests.event.EventValue;
+import mikra.eventsample.EventPayload;
+import mikra.eventsample.event.EventType;
+import mikra.eventsample.event.EventValue;
 
 
 @Named

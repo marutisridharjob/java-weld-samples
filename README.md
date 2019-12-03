@@ -4,6 +4,9 @@ CDI 2.0 / weld SE example with parameterised events.
 Also shows up how the annotation value is consumed by an interceptor with reflection.
 Simply run EventSenderTest.java as an unit-test.
 
+# installation
+I tested it within Eclipse (4.13.0) - just import it as a maven project.
+
 # dependencies
 - java 8 SE
 - weld SE (3.1.2)

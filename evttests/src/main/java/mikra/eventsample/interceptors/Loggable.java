@@ -1,4 +1,4 @@
-package mikra.evttests.interceptors;
+package mikra.eventsample.interceptors;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

@@ -1,4 +1,4 @@
-package mikra.evttests.interceptors;
+package mikra.eventsample.interceptors;
 
 import java.lang.annotation.Annotation;
 
@@ -8,8 +8,8 @@ import javax.interceptor.InvocationContext;
 
 import org.apache.log4j.Logger;
 
-import mikra.evttests.EventPayload;
-import mikra.evttests.event.EventType;
+import mikra.eventsample.EventPayload;
+import mikra.eventsample.event.EventType;
 
 @Loggable
 @Interceptor
