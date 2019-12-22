@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2"
+    xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+    <persistence-unit name="example_pu" transaction-type="JTA">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <jta-data-source>jdbc/example_ds</jta-data-source>
+        
+        <class>model.Account</class>
+        <class>model.Address</class>
+        <class>model.OrderedItem</class>
+        <class>model.Order</class>
+        <class>model.OrderedItem</class>        
+        <class>model.Person</class>
+         
+        <exclude-unlisted-classes>true</exclude-unlisted-classes> 
+        <shared-cache-mode>NONE</shared-cache-mode>
+         
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver" />
+            <property name="javax.persistence.jtaDataSource" value="jdbc/example_ds" />
+            <property name="eclipselink.target-database" value="Oracle" />
+            <property name="eclipselink.target-server" value="Default" />
+            <property name="eclipselink.validation-only" value="true" />
+            <property name="eclipselink.deploy-on-startup" value="true" />
+            <property name="eclipselink.logging.level" value="FINEST" />
+            <property name="eclipselink.logging.parameters" value="true" />
+            <property name="eclipselink.weaving" value="static" />
+            <property name="eclipselink.logging.level.sql" value="FINEST" />
+            <property name="eclipselink.logging.level.cache" value="FINEST" />
+            <property name="eclipselink.sequencing.start-sequence-at-nextval" value="true" />
+        </properties>
+        
+    </persistence-unit>
+</persistence>

@@ -32,7 +32,10 @@
 			<id>maven_repo</id>
 			<url>https://mvnrepository.com/</url>
 		</repository>
-
+		<repository>
+			<id>xwiki_ext</id>
+			<url>https://maven.xwiki.org/externals/</url>
+		</repository>
 		<repository>
 			<id>jboss</id>
 			<url>https://repository.jboss.org/nexus/content/repositories/releases/</url>
@@ -82,11 +85,25 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
+			<groupId>javax.transaction</groupId>
+			<artifactId>jta</artifactId>
+			<version>1.1</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>${version.log4j}</version>
+		</dependency>
+		<!--  
+		<dependency>
 			<groupId>org.apache.deltaspike.core</groupId>
 			<artifactId>deltaspike-core-api</artifactId>
 			<scope>compile</scope>
 		</dependency>
+		-->
 		<!-- scheduler integration -->
+		<!--  
 		<dependency>
 			<groupId>org.apache.deltaspike.modules</groupId>
 			<artifactId>deltaspike-scheduler-module-api</artifactId>
@@ -102,8 +119,9 @@
 			<artifactId>quartz</artifactId>
 			<version>${version.quartz}</version>
 		</dependency>
-
+        -->
 		<!-- needed for CDI within scheduled jobs -->
+		<!--  
 		<dependency>
 			<groupId>org.apache.deltaspike.cdictrl</groupId>
 			<artifactId>deltaspike-cdictrl-api</artifactId>
@@ -114,9 +132,9 @@
 			<artifactId>deltaspike-cdictrl-weld</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-
+         -->
 		<!-- core dependencies -->
-
+        <!--  
 		<dependency>
 			<groupId>org.apache.deltaspike.core</groupId>
 			<artifactId>deltaspike-core-impl</artifactId>
@@ -132,8 +150,9 @@
 			<artifactId>log4j</artifactId>
 			<version>${version.log4j}</version>
 		</dependency>
-
+         -->
 		<!-- test dependencies -->
+        <!--  unused
 		<dependency>
 			<groupId>org.junit.platform</groupId>
 			<artifactId>junit-platform-commons</artifactId>
@@ -164,10 +183,13 @@
 			<version>${version.mockito}</version>
 			<scope>test</scope>
 		</dependency>
+		-->
 	</dependencies>
-
+        
 
 	<modules>
 		<module>evttests</module>
+		<module>jta_cdi</module>
+		<module>eclipselink-jta</module>
 	</modules>
 </project>
