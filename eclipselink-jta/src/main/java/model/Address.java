@@ -15,6 +15,11 @@ import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+/**
+ * demo for the JTA feature
+ * @author Michael Krauter
+ *
+ */
 @Entity
 @Table(name="ADDRESS")
 @SequenceGenerator(name = "ADDRESS_SEQ",allocationSize = 2,sequenceName = "ADDRESS_SEQ")

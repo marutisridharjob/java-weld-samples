@@ -16,6 +16,11 @@ import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+/**
+ * demo for the JTA feature
+ * @author Michael Krauter
+ *
+ */
 @Entity
 @Table(name="ORDERED_ITEM")
 @SequenceGenerator(name = "ORDERED_ITEM_SEQ",allocationSize = 2,sequenceName = "ORDERED_ITEM_SEQ")

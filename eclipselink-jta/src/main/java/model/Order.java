@@ -1,6 +1,5 @@
 package model;
 
-import java.sql.Date;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,15 +13,17 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-import org.eclipse.persistence.jpa.jpql.parser.DateTime;
-
+/**
+ * demo for the JTA feature
+ * @author Michael Krauter
+ *
+ */
 @Entity
 @Table(name="ORDER")
 @SequenceGenerator(name = "ORDER_SEQ",allocationSize = 2,sequenceName = "ORDER_SEQ")

@@ -10,10 +10,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+/**
+ * demo for the JTA feature
+ * @author Michael Krauter
+ *
+ */
 @Entity
 @Table(name="PERSON")
 @SequenceGenerator(name = "PERSON_SEQ",allocationSize = 2,sequenceName = "PERSON_SEQ")

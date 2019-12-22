@@ -18,6 +18,11 @@ import model.OrderedItem;
 import persistence.base.OrderItemRepo;
 import persistence.base.OrderRepo;
 
+/**
+ * demo for the JTA feature
+ * @author Michael Krauter
+ *
+ */
 @SessionScoped
 public class OrderContext extends AbstractContext implements Serializable {
 	

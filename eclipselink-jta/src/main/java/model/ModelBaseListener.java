@@ -7,6 +7,11 @@ import javax.inject.Inject;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 
+/**
+ * demo for the JTA feature
+ * @author Michael Krauter
+ *
+ */
 public class ModelBaseListener {
 
 	@Inject

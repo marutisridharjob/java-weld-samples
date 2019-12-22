@@ -12,7 +12,11 @@ import mikra.jta.persistence.H2DataSourceWrapper;
 import mikra.jta.persistence.H2EntityManagerFactoryProducer;
 import mikra.jta.persistence.H2EntityManagerProducer;
 
-
+/**
+ * identical setup to the WeldJunit5NarayanaAutoExtension.class
+ * @author Michael Krauter
+ *
+ */
 public class WeldJunit5NarayanaExtension extends WeldJunit5Extension {
 
 		@Override

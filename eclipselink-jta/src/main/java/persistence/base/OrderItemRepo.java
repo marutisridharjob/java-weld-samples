@@ -6,6 +6,11 @@ import model.ItemType;
 import model.Order;
 import model.OrderedItem;
 
+/**
+ * demo for the JTA feature
+ * @author Michael Krauter
+ *
+ */
 @ApplicationScoped
 public class OrderItemRepo extends BaseEntityRepo<OrderedItem,Long> {
 

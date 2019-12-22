@@ -7,6 +7,11 @@ import javax.enterprise.inject.Produces;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+/**
+ * demo for the JTA feature
+ * @author Michael Krauter
+ *
+ */
 @RequestScoped
 public class EntityManagerProducer {
 

@@ -11,11 +11,14 @@ import model.Address;
 import model.Person;
 import persistence.base.PersonRepo;
 
+/**
+ * demo for the JTA feature
+ * @author Michael Krauter
+ *
+ */
 
 @SessionScoped
 public class AccountContext extends AbstractContext implements Serializable {
-
-
 
 	/**
 	 * 

@@ -10,6 +10,11 @@ import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+/**
+ * demo for the JTA feature
+ * @author Michael Krauter
+ *
+ */
 @Entity
 @Table(name="ACCOUNT")
 @SequenceGenerator(name = "ACCOUNT_SEQ",allocationSize = 2,sequenceName = "ACCOUNT_SEQ")

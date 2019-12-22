@@ -6,6 +6,11 @@ import model.Address;
 import model.AddressType;
 import model.Person;
 
+/**
+ * demo for the JTA feature
+ * @author Michael Krauter
+ *
+ */
 @ApplicationScoped
 public class PersonRepo extends BaseEntityRepo<Person,Long> {
 

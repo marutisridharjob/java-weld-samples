@@ -8,6 +8,11 @@ import javax.persistence.Column;
 import javax.persistence.EntityListeners;
 import javax.persistence.MappedSuperclass;
 
+/**
+ * demo for the JTA feature
+ * @author Michael Krauter
+ *
+ */
 @MappedSuperclass
 @Access(AccessType.FIELD)
 @EntityListeners(ModelBaseListener.class)

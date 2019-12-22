@@ -6,6 +6,11 @@ import javax.enterprise.context.ApplicationScoped;
 import model.Account;
 import model.Person;
 
+/**
+ * demo for the JTA feature
+ * @author Michael Krauter
+ *
+ */
 @ApplicationScoped
 public class AccountRepo extends BaseEntityRepo<Account,String>{
 
