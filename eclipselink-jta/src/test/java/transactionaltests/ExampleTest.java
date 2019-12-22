@@ -28,7 +28,11 @@ import com.arjuna.ats.jta.utils.JNDIManager;
 
 import business.AccountContext;
 
-
+/**
+ * main test to demonstrate JTA-Testing with SimpleJNDI,EclipseLink and H2 (in-memory)
+ * @author Michael Krauter
+ *
+ */
 // @ActivateScopes({SessionScoped.class,RequestScoped.class}) only autoextension
 @ExtendWith(ExampleTestExtension.class)
 @TestInstance(Lifecycle.PER_CLASS)

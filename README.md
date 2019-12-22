@@ -11,6 +11,7 @@ But there was no comparable JTA example with Eclipselink and SimpleJndi out ther
 The entire glue logic needed is within the maven-module jta-cdi-helper.
 
 A test-setup example can be found in the eclipselink-jta module under /transactionaltests.
+[example_test](https://github.com/mikra01/java_examples/blob/master/eclipselink-jta/src/test/java/transactionaltests/ExampleTest.java)
 
 Setup:  just inject the H2EntityManagerFactoryProducer and the H2EntityManagerProducer.
 It's responsible for overriding some of the persistence.xml properties for
@@ -22,7 +23,10 @@ The SEMemoryContext is responsible for the TransactionManager`s JNDI-Lookup.
 The H2 datasource needs configuration under the JNDI-Name "java:/dsName" and the name of the initial H2
 setup-script is configured with the JNDI-Name "java:/h2SetupScript".
 
-After the test you could dump the contents of the in-memory-database into a file.
+After the test you could dump the contents of the in-memory-database into a file for
+validation against a template.
+
+Happy testing!
 
 ## installation
 I tested everything with Eclipse (4.13.0) - just import it as a maven project.
