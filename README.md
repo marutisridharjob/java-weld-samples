@@ -13,15 +13,16 @@ The entire glue logic needed is within the maven-module jta-cdi-helper.
 A test-setup example can be found in the eclipselink-jta module under /transactionaltests.
 [example_test](https://github.com/mikra01/java_examples/blob/master/eclipselink-jta/src/test/java/transactionaltests/ExampleTest.java)
 
-Setup:  just inject the H2EntityManagerFactoryProducer and the H2EntityManagerProducer.
-It's responsible for overriding some of the persistence.xml properties for
-setting up the H2 database - so you can test directly with the persistence.xml
+Setup:  just write an junit5 extension by using one of the junit5 extensions in the module jta-cdi-helper.
+Just check the ExampleTestExtension.class for an example. It's responsible for setup the
+synthetic container.
+
+### implementation details
+The H2EntityManagerFactoryProducer is responsible for overriding of some of the persistence.xml properties for setting up the H2 database - so you can test directly with the persistence.xml
 which is shipped in production. 
-The junit5 weld extension is used to setup the container and needs to be configured for your tests
-(Example is in ExampleTestExtension.java).
 The SEMemoryContext is responsible for the TransactionManager`s JNDI-Lookup.
 The H2 datasource needs configuration under the JNDI-Name "java:/dsName" and the name of the initial H2
-setup-script is configured with the JNDI-Name "java:/h2SetupScript".
+setup-script is configured with the JNDI-Name "java:/h2SetupScript" (see /test/resources/dbtest/dbinit.sql)
 
 After the test you could dump the contents of the in-memory-database into a file for
 validation against a template.
