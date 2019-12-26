@@ -51,42 +51,37 @@ public class H2TransactionalDataSourceDelegate implements DataSource {
 		
 	@Override
 	public PrintWriter getLogWriter() throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
+        throw new RuntimeException("not implemented");
 	}
-
+ 
 	@Override
 	public void setLogWriter(PrintWriter out) throws SQLException {
-		// TODO Auto-generated method stub
-		
+	      throw new RuntimeException("not implemented");	  		
 	}
 
 	@Override
 	public void setLoginTimeout(int seconds) throws SQLException {
-		// TODO Auto-generated method stub
-		
+	      throw new RuntimeException("not implemented");
 	}
 
 	@Override
 	public int getLoginTimeout() throws SQLException {
-		// TODO Auto-generated method stub
-		return 0;
+	      throw new RuntimeException("not implemented");
 	}
 
 	@Override
 	public Logger getParentLogger() throws SQLFeatureNotSupportedException {
-		// TODO Auto-generated method stub
-		return null;
+	      throw new RuntimeException("not implemented");
 	}
 
 	@Override
 	public <T> T unwrap(Class<T> iface) throws SQLException {
-          return null;
+	      throw new RuntimeException("not implemented");
 	}
 
 	@Override
 	public boolean isWrapperFor(Class<?> iface) throws SQLException {
-           return false;
+	      throw new RuntimeException("not implemented");
 	}
 
 	@Override
