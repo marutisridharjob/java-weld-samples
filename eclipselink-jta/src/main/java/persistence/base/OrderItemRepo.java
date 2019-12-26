@@ -3,7 +3,6 @@ package persistence.base;
 import java.io.Serializable;
 
 import javax.enterprise.context.ApplicationScoped;
-import javax.transaction.Transactional;
 
 import model.ItemType;
 import model.Order;
@@ -15,7 +14,13 @@ import model.OrderedItem;
  *
  */
 
+@ApplicationScoped
 public class OrderItemRepo extends BaseEntityRepo<OrderedItem,Long>  implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8053374956100564650L;
 
 	public OrderedItem newOrderItem(Order order, String itemName,ItemType type) {
 		OrderedItem oi = order.newItem();

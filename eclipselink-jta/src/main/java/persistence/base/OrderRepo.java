@@ -1,14 +1,11 @@
 package persistence.base;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
 
 import javax.enterprise.context.ApplicationScoped;
-import javax.transaction.Transactional;
 
 import model.Order;
 import model.OrderStatus;
-import model.Person;
 
 /**
  * demo for the JTA feature
@@ -16,7 +13,13 @@ import model.Person;
  *
  */
 
+@ApplicationScoped
 public class OrderRepo extends BaseEntityRepo<Order,Long> implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3679689478746148675L;
 
 	public Order saveOrder(Order o) {
 		return save(o);

@@ -3,11 +3,10 @@ package persistence.base;
 import java.io.Serializable;
 
 import javax.enterprise.context.ApplicationScoped;
-import javax.transaction.Transactional;
 
 import model.AuditTrail;
 
-
+@ApplicationScoped
 public class AuditTrailRepo extends BaseEntityRepo<AuditTrail, Long> implements Serializable{
 
 	

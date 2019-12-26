@@ -1,7 +1,6 @@
 package mikra.jta.jndihelper;
 
 import java.util.Hashtable;
-import java.util.Set;
 
 import javax.enterprise.inject.spi.Bean;
 import javax.enterprise.inject.spi.BeanManager;

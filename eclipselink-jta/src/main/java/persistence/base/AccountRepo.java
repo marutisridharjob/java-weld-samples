@@ -4,8 +4,6 @@ package persistence.base;
 import java.io.Serializable;
 
 import javax.enterprise.context.ApplicationScoped;
-import javax.transaction.TransactionScoped;
-import javax.transaction.Transactional;
 
 import model.Account;
 import model.Person;

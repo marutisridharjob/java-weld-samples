@@ -3,8 +3,6 @@ package persistence.base;
 import java.io.Serializable;
 
 import javax.enterprise.context.ApplicationScoped;
-import javax.transaction.TransactionScoped;
-import javax.transaction.Transactional;
 
 import model.Address;
 import model.AddressType;
