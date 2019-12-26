@@ -32,7 +32,7 @@ public class AuditTrailContext  implements Serializable {
 	}
 	
 	@Transactional
-	public AuditTrail logAccountAction(Account o) throws Exception {
+	public AuditTrail logAccountAction(Account o)  {
 		AuditTrail at = new AuditTrail();
 		at.setAudit_object("new_account "+o.getId());
 		auditTrailRepo.logAction(at);

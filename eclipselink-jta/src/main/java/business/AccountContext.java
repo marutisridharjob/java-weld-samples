@@ -4,10 +4,6 @@ import java.io.Serializable;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
-import javax.transaction.HeuristicMixedException;
-import javax.transaction.HeuristicRollbackException;
-import javax.transaction.NotSupportedException;
-import javax.transaction.SystemException;
 import javax.transaction.Transactional;
 
 import model.Account;
@@ -40,7 +36,7 @@ public class AccountContext  implements Serializable {
 	
 
     @Transactional
-	public Account createNewAccount(String name,String email,String firstname,String lastname) throws SystemException,NotSupportedException,HeuristicRollbackException,HeuristicMixedException,Exception {
+	public Account createNewAccount(String name,String email,String firstname,String lastname) {
 		Person p = personRepo.createNewPerson(firstname, lastname);
 		Account acc = this.accountRepo.createNewAccount(name, email,p);
 		this.auditTrailContext.logAccountAction(acc);

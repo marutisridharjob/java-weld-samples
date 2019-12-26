@@ -103,8 +103,7 @@ public class ExampleTest {
 	
     @Test
     @Order(value = 2)
-	public void testCreateAccount2(AccountContext ctx) throws SystemException,javax.transaction.NotSupportedException,
-	HeuristicRollbackException,HeuristicMixedException,javax.transaction.RollbackException,Exception{
+	public void testCreateAccount2(AccountContext ctx){
 		ctx.createNewAccount("testname3","test4@test.net"," basic ", "test ");	
         ctx.createNewAccount("testname5","test5@test.net","testfirstname","testlastname");
 	}
@@ -112,8 +111,7 @@ public class ExampleTest {
     
     @Test
     @Order(value = 3)
-	public void testAddAddresses(AccountContext ctx) throws SystemException,javax.transaction.NotSupportedException,
-	HeuristicRollbackException,HeuristicMixedException,javax.transaction.RollbackException,Exception{
+	public void testAddAddresses(AccountContext ctx) {
          Account acc = ctx.readAccount("x1@test.net");
          assertTrue(acc != null);
          String aid = acc.getId();
@@ -133,8 +131,7 @@ public class ExampleTest {
     
     @Test
     @Order(value = 4)
-	public void testReadAddress(AccountContext ctx) throws SystemException,javax.transaction.NotSupportedException,
-	HeuristicRollbackException,HeuristicMixedException,javax.transaction.RollbackException,Exception{
+	public void testReadAddress(AccountContext ctx) {
         Account acc = ctx.readAccount("x1@test.net");
         List<Address> addrs = acc.getPerson().allAddresses();
         assertTrue(addrs.size()==2);
