@@ -10,18 +10,18 @@ But there was no comparable JTA example with Eclipselink and SimpleJndi out ther
 
 The entire glue logic needed is within the maven-module jta-cdi-helper.
 
-A test-setup example can be found in the eclipselink-jta module under /transactionaltests.
+A test-setup example can be found in the eclipselink-jta module under /transactionaltests:
 [example_test](https://github.com/mikra01/java_examples/blob/master/eclipselink-jta/src/test/java/transactionaltests/ExampleTest.java)
 The example project used here is only a quick artificial setup and does not demonstrate proper db modelling.
 
 Setup:  just write a junit5 extension by using one of the junit5 extensions in the module jta-cdi-helper.
-Just check the ExampleTestExtension.class for an example. It's responsible for setup the
-synthetic container.
+Just check the ExampleTestExtension.java how it's done. The extension is responsible for setup the
+needed resources.
 
 ### implementation details
 The H2EntityManagerFactoryProducer is responsible for overriding of some of the persistence.xml properties (for instance setting up the H2 database) - so you can test directly with the persistence.xml
-which is shipped to production. 
-The SeMemoryContext is responsible for the TransactionManager`s JNDI-Lookup.
+which is shipped to production (no need for a second copy under test/resources)
+The SeMemoryContext is responsible for the TransactionManager`s JNDI-Lookup (Narayana uses javax.naming.reference and SimpleJndi can't deal with that).
 All needed jndi-resources are configured within /transactionaltests/ExampleTestExtension.java
 
 After the test you could dump the contents of the in-memory-database into a file for
