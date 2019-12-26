@@ -10,7 +10,7 @@ import org.jboss.logging.Logger;
 import org.jboss.weld.transaction.spi.TransactionServices;
 
 /**
- * src: https://github.com/jbosstm/quickstart/blob/master/jta-1_2-standalone/src/test/java/org/jboss/narayana/quickstarts/jta/cdi/CDITransactionServices.java
+ * src from: https://github.com/jbosstm/quickstart/blob/master/jta-1_2-standalone/src/test/java/org/jboss/narayana/quickstarts/jta/cdi/CDITransactionServices.java
  * 
  * SPI extension point of the Weld for integrate with transaction manager.
  * If the interface is implemented by the deployment the Weld stops to show

@@ -15,6 +15,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 /**
  * demo for the JTA feature
@@ -23,7 +24,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name="ORDERED_ITEM")
-@SequenceGenerator(name = "ORDERED_ITEM_SEQ",allocationSize = 2,sequenceName = "ORDERED_ITEM_SEQ")
+@SequenceGenerator(name = "ORDERED_ITEM_SEQ",allocationSize = 1,sequenceName = "ORDERED_ITEM_SEQ")
 public class OrderedItem extends ModelBase<Long> {
 
 	@Id
@@ -38,8 +39,8 @@ public class OrderedItem extends ModelBase<Long> {
 	@Enumerated(EnumType.STRING)
 	private ItemType itemType;
 	
-	@OneToOne(optional = false,fetch = FetchType.EAGER,cascade = {CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
-	@PrimaryKeyJoinColumn(name="ORDER_ID", referencedColumnName="ID")
+	@ManyToOne(optional = false,fetch = FetchType.EAGER,cascade = {CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
+	@JoinColumn(name="ORDER_ID", nullable = false, referencedColumnName="ID")
 	protected Order theorder;
 	
 	@Override

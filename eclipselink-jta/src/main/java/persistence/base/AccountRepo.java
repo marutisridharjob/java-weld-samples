@@ -1,7 +1,11 @@
 package persistence.base;
 
 
+import java.io.Serializable;
+
 import javax.enterprise.context.ApplicationScoped;
+import javax.transaction.TransactionScoped;
+import javax.transaction.Transactional;
 
 import model.Account;
 import model.Person;
@@ -12,7 +16,12 @@ import model.Person;
  *
  */
 @ApplicationScoped
-public class AccountRepo extends BaseEntityRepo<Account,String>{
+public class AccountRepo extends BaseEntityRepo<Account,String> implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5912006270166494146L;
 
 	public Account getAccountByEmail(String email) {
 		return createNamedQuery(Account.findByEmail, Account.class).

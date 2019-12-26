@@ -1,8 +1,10 @@
 package persistence.base;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.transaction.Transactional;
 
 import model.Order;
 import model.OrderStatus;
@@ -13,13 +15,10 @@ import model.Person;
  * @author Michael Krauter
  *
  */
-@ApplicationScoped
-public class OrderRepo extends BaseEntityRepo<Order,Long> {
 
-	public Order newOrder(Person p,LocalDateTime orderDate,OrderStatus status) {
-		Order o = p.newOrder();
-		o.setStatus(status);
-		o.setOrderDate(orderDate);
+public class OrderRepo extends BaseEntityRepo<Order,Long> implements Serializable {
+
+	public Order saveOrder(Order o) {
 		return save(o);
 	}
 	

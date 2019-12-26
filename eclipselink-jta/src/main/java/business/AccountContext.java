@@ -2,13 +2,18 @@ package business;
 
 import java.io.Serializable;
 
-import javax.enterprise.context.SessionScoped;
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
+import javax.transaction.HeuristicMixedException;
+import javax.transaction.HeuristicRollbackException;
+import javax.transaction.NotSupportedException;
+import javax.transaction.SystemException;
 import javax.transaction.Transactional;
 
 import model.Account;
 import model.Address;
 import model.Person;
+import persistence.base.AccountRepo;
 import persistence.base.PersonRepo;
 
 /**
@@ -16,9 +21,8 @@ import persistence.base.PersonRepo;
  * @author Michael Krauter
  *
  */
-
-@SessionScoped
-public class AccountContext extends AbstractContext implements Serializable {
+@ApplicationScoped
+public class AccountContext  implements Serializable {
 
 	/**
 	 * 
@@ -28,37 +32,47 @@ public class AccountContext extends AbstractContext implements Serializable {
 	@Inject
 	PersonRepo personRepo;
 	
-	private Account acc;
+	@Inject
+	AccountRepo accountRepo;
 	
-	@Transactional
-	public void createNewAccount(String name,String email,String firstname,String lastname) {
+	@Inject
+	protected AuditTrailContext auditTrailContext;
+	
+
+    @Transactional
+	public Account createNewAccount(String name,String email,String firstname,String lastname) throws SystemException,NotSupportedException,HeuristicRollbackException,HeuristicMixedException,Exception {
 		Person p = personRepo.createNewPerson(firstname, lastname);
-		this.acc = this.accountRepo.createNewAccount(name, email,p);	
+		Account acc = this.accountRepo.createNewAccount(name, email,p);
+		this.auditTrailContext.logAccountAction(acc);
+		return acc;
 	}
 	
-	public void readAccount(String email) {
-		this.acc = this.accountRepo.getAccountByEmail(email);
+	public Account readAccount(String email) {
+		return this.accountRepo.getAccountByEmail(email);
 	}
+	
+	public Address newShippingAddress(Account acc) {
+		return personRepo.addShippingAddress(acc.getPerson());		
+	}
+
+	public Address newInvoiceAddress(Account acc) {
+		return personRepo.addInvoiceAddress(acc.getPerson());		
+	}
+
 	
 	@Transactional
-	public Address newShippingAddress() {
-		return personRepo.addShippingAddress(this.acc.getPerson());		
+	public Account updateAccount(Account acc) {
+		return this.accountRepo.save(acc);
 	}
-	
-	@Transactional
+
 	public Address updateAddress(Address addr) {
 		throw new RuntimeException("not implemented");
 	}
 	
-	@Transactional
+
 	public Address deleteAddress(Address addr) {
 		throw new RuntimeException("not implemented");
 	}
-
-	protected Account getAcc() {
-		return acc;
-	}
-	
 	
 	
 }

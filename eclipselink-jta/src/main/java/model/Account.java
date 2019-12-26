@@ -1,8 +1,11 @@
 package model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.MapsId;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
@@ -17,7 +20,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name="ACCOUNT")
-@SequenceGenerator(name = "ACCOUNT_SEQ",allocationSize = 2,sequenceName = "ACCOUNT_SEQ")
+@SequenceGenerator(name = "ACCOUNT_SEQ",allocationSize = 1,sequenceName = "ACCOUNT_SEQ")
 @NamedQueries({
 @NamedQuery(name=Account.findByEmail,query = "select a from Account a where a.email = :pemail ")
 })
@@ -57,8 +60,8 @@ public class Account extends ModelBase<String>{
 	@Column(name="email",length = 50,nullable = false)
 	private String email;
 	
-	@OneToOne
-	@PrimaryKeyJoinColumn(name="PERSON_ID", referencedColumnName="ID")
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="PERSON_ID",nullable = false, referencedColumnName = "ID")
 	private Person person;
 	
 	@Override

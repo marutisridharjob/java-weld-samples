@@ -2,6 +2,9 @@ package mikra.jta.jndihelper;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
+import javax.naming.CompositeName;
+import javax.naming.InitialContext;
 import javax.naming.Name;
 import javax.naming.NamingException;
 import javax.transaction.TransactionManager;
@@ -11,10 +14,16 @@ import org.osjava.sj.memory.MemoryContext;
 
 import com.arjuna.ats.internal.jta.transaction.arjunacore.TransactionManagerImple;
 import com.arjuna.ats.internal.jta.transaction.arjunacore.TransactionSynchronizationRegistryImple;
+import com.arjuna.ats.jdbc.TransactionalDriver;
+import com.arjuna.ats.jta.UserTransaction;
+import com.arjuna.ats.jta.utils.JNDIManager;
+
+import mikra.jta.persistence.H2DataSourceWrapper;
+import mikra.jta.persistence.H2TransactionalDataSourceDelegate;
 
 /**
  * helpercontext because of 
- * simplejndi can't deal with javax.naming.reference
+ * simplejndi can't deal with javax.naming.reference (used by Narayana)
  * so we need a little bit magic here..
  * @author Michael Krauter
  *
@@ -23,13 +32,13 @@ import com.arjuna.ats.internal.jta.transaction.arjunacore.TransactionSynchroniza
 public class SeMemoryContext extends MemoryContext {
 
 	TransactionManager transactionManager;
-	// only one instance allowed 
 	TransactionSynchronizationRegistry syncReg;
-	
+		
 	@PostConstruct
-	private void init() {
-		this.transactionManager = new TransactionManagerImple();
-		this.syncReg = new TransactionSynchronizationRegistryImple();
+	private void init() throws Exception{	
+		this.transactionManager =  new TransactionManagerImple();
+	    this.syncReg = new TransactionSynchronizationRegistryImple();		
+		
 	}
 	
 	public Object lookup(Name name) throws NamingException{
@@ -39,7 +48,7 @@ public class SeMemoryContext extends MemoryContext {
 		}else if(name.toString().toLowerCase().contains("synchronization")) {
 			return this.syncReg;
 		}else if(name.toString().toLowerCase().contains("usertransaction")) {
-		    return super.lookup(name);	
+		    return super.lookup(name);				
 		}else {
 			return super.lookup(name);
 		}

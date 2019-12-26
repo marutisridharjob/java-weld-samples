@@ -1,6 +1,10 @@
 package persistence.base;
 
+import java.io.Serializable;
+
 import javax.enterprise.context.ApplicationScoped;
+import javax.transaction.TransactionScoped;
+import javax.transaction.Transactional;
 
 import model.Address;
 import model.AddressType;
@@ -12,26 +16,23 @@ import model.Person;
  *
  */
 @ApplicationScoped
-public class PersonRepo extends BaseEntityRepo<Person,Long> {
+public class PersonRepo extends BaseEntityRepo<Person,Long> implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6384841350043899403L;
 
 	public Person createNewPerson(String firstname, String lastname) {
-		Person p = new Person();
+		Person p = new Person(); 
 		p.setFirstname(firstname);
 		p.setLastname(lastname);
 		return save(p);
 	}
-	
-	private void populate(Address addr,String street, String streetNo, String city, String postcode) {
-		addr.setStreet(street);
-		addr.setStreetNo(streetNo);
-		addr.setCity(city);
-		addr.setPostcode(postcode);
-	}
-	
-	public Address addInvoiceAddress(Person p,String street,String streetNo,String city,String postcode) {
+		
+	public Address addInvoiceAddress(Person p) {
 		Address addr = new Address();
 		addr.setType(AddressType.INVOICE_ADDR);
-		populate(addr,street,streetNo,city,postcode);
 		p.addAddress(addr);
 		save(p);
 		return addr;
@@ -49,7 +50,6 @@ public class PersonRepo extends BaseEntityRepo<Person,Long> {
 		Address addr = new Address();
 		addr.setType(AddressType.SHIPPING_ADDR);
 		p.addAddress(addr);
-		save(p);
 		return addr;
 	}
 	

@@ -13,11 +13,13 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+
 
 /**
  * demo for the JTA feature
@@ -25,8 +27,8 @@ import javax.persistence.Table;
  *
  */
 @Entity
-@Table(name="ORDER")
-@SequenceGenerator(name = "ORDER_SEQ",allocationSize = 2,sequenceName = "ORDER_SEQ")
+@Table(name="THE_ORDER")
+@SequenceGenerator(name = "ORDER_SEQ",allocationSize = 1,sequenceName = "ORDER_SEQ")
 public class Order extends ModelBase<Long> {
 
 	@Id
@@ -44,8 +46,8 @@ public class Order extends ModelBase<Long> {
 	@OneToMany(cascade = CascadeType.ALL,orphanRemoval = true,mappedBy =  "theorder")
 	private List<OrderedItem> orderContent = new ArrayList<OrderedItem>();
 	
-	@ManyToOne(optional = false,fetch = FetchType.EAGER,cascade = {CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
-	@PrimaryKeyJoinColumn(name="PERSON_ID", referencedColumnName="ID")	
+	@ManyToOne(optional = false,fetch = FetchType.EAGER,cascade = {CascadeType.ALL})
+	@JoinColumn(name="PERSON_ID", referencedColumnName="ID")	
 	protected Person theperson;
 	
 	@Override

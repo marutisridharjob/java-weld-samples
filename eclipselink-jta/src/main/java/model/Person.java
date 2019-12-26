@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 /**
  * demo for the JTA feature
@@ -20,7 +21,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name="PERSON")
-@SequenceGenerator(name = "PERSON_SEQ",allocationSize = 2,sequenceName = "PERSON_SEQ")
+@SequenceGenerator(name = "PERSON_SEQ",allocationSize = 1,sequenceName = "PERSON_SEQ")
 public class Person extends ModelBase<Long> {
 
 	@Id
@@ -70,9 +71,13 @@ public class Person extends ModelBase<Long> {
 		this.addresses.add(addr);
 	}
 	
+	public List<Address> allAddresses(){
+		return this.addresses;
+	}
+	
 	public Order newOrder() {
 		Order o = new Order();
-		o.theperson = this;
+		//o.theperson = this;
 		this.allOrders.add(o);
 		return o;
 	}

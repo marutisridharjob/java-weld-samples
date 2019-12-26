@@ -11,7 +11,7 @@ import org.eclipse.persistence.transaction.JTATransactionController;
 import com.arjuna.ats.jta.common.jtaPropertyManager;
 
 /**
- * needed by eclipselink to get the external transaction controller registered
+ * needed by eclipselink to get the external transaction controller registered.
  * @author Michael Krauter
  *
  */
@@ -27,8 +27,7 @@ public class SeServerPlatform extends JMXServerPlatformBase{
 	}
 	
 	public int getJNDIConnectorLookupType() {
-		return JNDIConnector.STRING_LOOKUP;
-		// simplejndi 
+		return JNDIConnector.COMPOSITE_NAME_LOOKUP;
 	}
 	
 	public static class TestTransactionController extends JTATransactionController{

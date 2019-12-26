@@ -1,6 +1,9 @@
 package persistence.base;
 
+import java.io.Serializable;
+
 import javax.enterprise.context.ApplicationScoped;
+import javax.transaction.Transactional;
 
 import model.ItemType;
 import model.Order;
@@ -11,8 +14,8 @@ import model.OrderedItem;
  * @author Michael Krauter
  *
  */
-@ApplicationScoped
-public class OrderItemRepo extends BaseEntityRepo<OrderedItem,Long> {
+
+public class OrderItemRepo extends BaseEntityRepo<OrderedItem,Long>  implements Serializable{
 
 	public OrderedItem newOrderItem(Order order, String itemName,ItemType type) {
 		OrderedItem oi = order.newItem();

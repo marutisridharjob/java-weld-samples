@@ -22,7 +22,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name="ADDRESS")
-@SequenceGenerator(name = "ADDRESS_SEQ",allocationSize = 2,sequenceName = "ADDRESS_SEQ")
+@SequenceGenerator(name = "ADDRESS_SEQ",allocationSize = 1,sequenceName = "ADDRESS_SEQ")
 public class Address extends ModelBase<Long> {
 
 	@Id
@@ -35,7 +35,7 @@ public class Address extends ModelBase<Long> {
 	private AddressType type;
 	
 	@ManyToOne(optional = false,fetch = FetchType.EAGER,cascade = {CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
-	@PrimaryKeyJoinColumn(name="PERSON_ID", referencedColumnName="ID")
+	@JoinColumn(name="PERSON_ID",nullable = false, referencedColumnName="ID")
 	private Person theperson;
 	
 	@Column(name="STREET",nullable=false)
