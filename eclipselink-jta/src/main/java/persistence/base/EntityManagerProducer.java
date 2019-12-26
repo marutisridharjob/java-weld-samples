@@ -3,6 +3,7 @@ package persistence.base;
 
 import java.io.Serializable;
 
+import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.Disposes;
 import javax.enterprise.inject.Produces;
@@ -16,6 +17,7 @@ import javax.persistence.SynchronizationType;
  * @author Michael Krauter
  *
  */
+@ApplicationScoped
 public class EntityManagerProducer implements Serializable {
 
 

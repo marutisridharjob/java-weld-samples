@@ -61,11 +61,13 @@ public class AccountContext  implements Serializable {
 		return this.accountRepo.save(acc);
 	}
 
+	@Transactional
 	public Address updateAddress(Address addr) {
 		throw new RuntimeException("not implemented");
 	}
 	
 
+	@Transactional
 	public Address deleteAddress(Address addr) {
 		throw new RuntimeException("not implemented");
 	}

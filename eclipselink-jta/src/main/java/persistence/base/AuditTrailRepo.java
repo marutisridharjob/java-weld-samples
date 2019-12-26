@@ -6,6 +6,11 @@ import javax.enterprise.context.ApplicationScoped;
 
 import model.AuditTrail;
 
+/**
+ * demo for the JTA feature
+ * @author Michael Krauter
+ *
+ */
 @ApplicationScoped
 public class AuditTrailRepo extends BaseEntityRepo<AuditTrail, Long> implements Serializable{
 

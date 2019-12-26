@@ -13,7 +13,6 @@ import model.OrderedItem;
  * @author Michael Krauter
  *
  */
-
 @ApplicationScoped
 public class OrderItemRepo extends BaseEntityRepo<OrderedItem,Long>  implements Serializable{
 

@@ -10,6 +10,11 @@ import javax.persistence.TypedQuery;
 
 import model.ModelBase;
 
+/**
+ * demo for the JTA feature
+ * @author Michael Krauter
+ *
+ */
 public abstract class BaseEntityRepo<E extends ModelBase<T>,T> {
 
 	@Inject

@@ -6,12 +6,18 @@ import javax.enterprise.context.ApplicationScoped;
 
 import javax.inject.Inject;
 import javax.transaction.Transactional;
+import javax.transaction.Transactional.TxType;
 
 import model.Account;
 import model.AuditTrail;
 import model.Order;
 import persistence.base.AuditTrailRepo;
 
+/**
+ * demo for the JTA feature
+ * @author Michael Krauter
+ *
+ */
 @ApplicationScoped
 public class AuditTrailContext  implements Serializable {
 
@@ -23,7 +29,7 @@ public class AuditTrailContext  implements Serializable {
 	@Inject
 	AuditTrailRepo auditTrailRepo;
 	
-	@Transactional
+	@Transactional(value = TxType.REQUIRES_NEW)
 	public AuditTrail logOrderAction(Order o) {
 		AuditTrail at = new AuditTrail();
 		at.setAudit_object("order_id "+o.getId());
@@ -31,7 +37,7 @@ public class AuditTrailContext  implements Serializable {
 		return at;
 	}
 	
-	@Transactional
+	@Transactional(value = TxType.REQUIRES_NEW)
 	public AuditTrail logAccountAction(Account o)  {
 		AuditTrail at = new AuditTrail();
 		at.setAudit_object("new_account "+o.getId());
