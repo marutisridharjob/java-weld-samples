@@ -50,7 +50,7 @@
     <entry key="com.arjuna.ats.arjuna.objectstore.objectStoreDir">target</entry>
 
     <!-- (default is ON) -->
-    <entry key="ObjectStoreEnvironmentBean.transactionSync">OFF</entry>
+    <entry key="ObjectStoreEnvironmentBean.transactionSync">ON</entry>
 
     <!-- (Must be unique across all Arjuna instances.) -->
     <entry key="CoreEnvironmentBean.nodeIdentifier">1</entry>
