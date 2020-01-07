@@ -6,7 +6,8 @@ import javax.interceptor.AroundInvoke;
 import javax.interceptor.Interceptor;
 import javax.interceptor.InvocationContext;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import mikra.eventsample.EventPayload;
 import mikra.eventsample.event.EventType;
@@ -15,7 +16,7 @@ import mikra.eventsample.event.EventType;
 @Interceptor
 public class EventTypeLoggingInterceptor {
 	// for business related stuff better use Decorators
-	private static Logger Log = Logger.getLogger(EventTypeLoggingInterceptor.class);
+	private static Logger Log =  LogManager.getLogger(EventTypeLoggingInterceptor.class);
 
 	@AroundInvoke
 	public Object doLog(InvocationContext ctx) throws Exception {

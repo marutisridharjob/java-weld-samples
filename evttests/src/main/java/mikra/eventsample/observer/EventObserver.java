@@ -4,7 +4,8 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.event.Observes;
 import javax.inject.Named;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import mikra.eventsample.EventPayload;
 import mikra.eventsample.interceptors.Loggable;
@@ -13,7 +14,7 @@ import mikra.eventsample.interceptors.Loggable;
 @ApplicationScoped
 public class EventObserver {
 	// this observer is always called regardless of the EventType
-	private static Logger Log = Logger.getLogger(EventObserver.class);
+	private static Logger Log = LogManager.getLogger(EventObserver.class);
 
 	@Loggable
 	public void notifyGoodbye(@Observes EventPayload payload) {

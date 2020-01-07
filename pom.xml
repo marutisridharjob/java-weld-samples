@@ -49,7 +49,7 @@
 		<version.weld-junit5>2.0.1.Final</version.weld-junit5>
 		<version.junit-jupiter-engine>5.5.2</version.junit-jupiter-engine>
 		<version.junit-platform-commons>1.5.2</version.junit-platform-commons>
-		<version.log4j>1.2.17</version.log4j>
+		<version.log4j>2.13.0</version.log4j>
 		<version.weld>3.1.2.Final</version.weld>
 		<deltaspike.version>1.9.1</deltaspike.version>
 		<version.junit.jupiter>5.4.1</version.junit.jupiter>
@@ -91,101 +91,41 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
 			<version>${version.log4j}</version>
 		</dependency>
-		<!--  
-		<dependency>
-			<groupId>org.apache.deltaspike.core</groupId>
-			<artifactId>deltaspike-core-api</artifactId>
-			<scope>compile</scope>
-		</dependency>
-		-->
+		<!-- <dependency> <groupId>org.apache.deltaspike.core</groupId> <artifactId>deltaspike-core-api</artifactId> 
+			<scope>compile</scope> </dependency> -->
 		<!-- scheduler integration -->
-		<!--  
-		<dependency>
-			<groupId>org.apache.deltaspike.modules</groupId>
-			<artifactId>deltaspike-scheduler-module-api</artifactId>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.deltaspike.modules</groupId>
-			<artifactId>deltaspike-scheduler-module-impl</artifactId>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.quartz-scheduler</groupId>
-			<artifactId>quartz</artifactId>
-			<version>${version.quartz}</version>
-		</dependency>
-        -->
+		<!-- <dependency> <groupId>org.apache.deltaspike.modules</groupId> <artifactId>deltaspike-scheduler-module-api</artifactId> 
+			<scope>compile</scope> </dependency> <dependency> <groupId>org.apache.deltaspike.modules</groupId> 
+			<artifactId>deltaspike-scheduler-module-impl</artifactId> <scope>runtime</scope> 
+			</dependency> <dependency> <groupId>org.quartz-scheduler</groupId> <artifactId>quartz</artifactId> 
+			<version>${version.quartz}</version> </dependency> -->
 		<!-- needed for CDI within scheduled jobs -->
-		<!--  
-		<dependency>
-			<groupId>org.apache.deltaspike.cdictrl</groupId>
-			<artifactId>deltaspike-cdictrl-api</artifactId>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.deltaspike.cdictrl</groupId>
-			<artifactId>deltaspike-cdictrl-weld</artifactId>
-			<scope>runtime</scope>
-		</dependency>
-         -->
+		<!-- <dependency> <groupId>org.apache.deltaspike.cdictrl</groupId> <artifactId>deltaspike-cdictrl-api</artifactId> 
+			<scope>compile</scope> </dependency> <dependency> <groupId>org.apache.deltaspike.cdictrl</groupId> 
+			<artifactId>deltaspike-cdictrl-weld</artifactId> <scope>runtime</scope> </dependency> -->
 		<!-- core dependencies -->
-        <!--  
-		<dependency>
-			<groupId>org.apache.deltaspike.core</groupId>
-			<artifactId>deltaspike-core-impl</artifactId>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.jboss.weld.se</groupId>
-			<artifactId>weld-se-core</artifactId>
-			<version>${version.weld}</version>
-		</dependency>
-		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>${version.log4j}</version>
-		</dependency>
-         -->
+		<!-- <dependency> <groupId>org.apache.deltaspike.core</groupId> <artifactId>deltaspike-core-impl</artifactId> 
+			<scope>runtime</scope> </dependency> <dependency> <groupId>org.jboss.weld.se</groupId> 
+			<artifactId>weld-se-core</artifactId> <version>${version.weld}</version> 
+			</dependency> <dependency> <groupId>log4j</groupId> <artifactId>log4j</artifactId> 
+			<version>${version.log4j}</version> </dependency> -->
 		<!-- test dependencies -->
-        <!--  unused
-		<dependency>
-			<groupId>org.junit.platform</groupId>
-			<artifactId>junit-platform-commons</artifactId>
-			<version>${version.junit-platform-commons}</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter-engine</artifactId>
-			<version>${version.junit-jupiter-engine}</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.jboss.weld</groupId>
-			<artifactId>weld-junit5</artifactId>
-			<version>${version.weld-junit5}</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.assertj</groupId>
-			<artifactId>assertj-core</artifactId>
-			<version>${version.assertj-core}</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.mockito</groupId>
-			<artifactId>mockito-core</artifactId>
-			<version>${version.mockito}</version>
-			<scope>test</scope>
-		</dependency>
-		-->
+		<!-- unused <dependency> <groupId>org.junit.platform</groupId> <artifactId>junit-platform-commons</artifactId> 
+			<version>${version.junit-platform-commons}</version> <scope>test</scope> 
+			</dependency> <dependency> <groupId>org.junit.jupiter</groupId> <artifactId>junit-jupiter-engine</artifactId> 
+			<version>${version.junit-jupiter-engine}</version> <scope>test</scope> </dependency> 
+			<dependency> <groupId>org.jboss.weld</groupId> <artifactId>weld-junit5</artifactId> 
+			<version>${version.weld-junit5}</version> <scope>test</scope> </dependency> 
+			<dependency> <groupId>org.assertj</groupId> <artifactId>assertj-core</artifactId> 
+			<version>${version.assertj-core}</version> <scope>test</scope> </dependency> 
+			<dependency> <groupId>org.mockito</groupId> <artifactId>mockito-core</artifactId> 
+			<version>${version.mockito}</version> <scope>test</scope> </dependency> -->
 	</dependencies>
-        
+
 
 	<modules>
 		<module>evttests</module>
