@@ -49,7 +49,7 @@
 		<version.weld-junit5>2.0.1.Final</version.weld-junit5>
 		<version.junit-jupiter-engine>5.5.2</version.junit-jupiter-engine>
 		<version.junit-platform-commons>1.5.2</version.junit-platform-commons>
-		<version.log4j>2.17.0</version.log4j>
+		<version.log4j>2.17.1</version.log4j>
 		<version.weld>3.1.2.Final</version.weld>
 		<deltaspike.version>1.9.1</deltaspike.version>
 		<version.junit.jupiter>5.4.1</version.junit.jupiter>
